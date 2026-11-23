@@ -516,3 +516,5 @@ Evidence is active by default in live mode:
 Built from the supplied *AI Smart Security Camera System* requirements document
 and the 14 reference dashboard photographs in this folder. All people, vehicles,
 plates and incidents in the demo data are fictional and generated locally.
+#   P F - P r o j e c t  
+ 
