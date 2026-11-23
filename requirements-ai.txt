@@ -1,0 +1,19 @@
+# ---------------------------------------------------------------------------
+# Optional real-model AI stack
+#
+# The application runs out of the box with the synthetic demo detector, so
+# these packages are NOT required.  Install them only when you want to run
+# YOLOv8 object detection and InsightFace recognition on real camera streams.
+#
+#   pip install -r requirements-ai.txt
+#   set DETECTOR_MODE=yolo
+#   set FACE_RECOGNITION_ENABLED=true
+#
+# The first run downloads the YOLO weights (yolov8n.pt by default) and the
+# InsightFace model pack (buffalo_l) into the current user's cache directory.
+# ---------------------------------------------------------------------------
+-r requirements.txt
+
+ultralytics>=8.2
+insightface>=0.7.3
+onnxruntime>=1.16

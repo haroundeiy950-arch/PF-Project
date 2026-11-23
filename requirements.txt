@@ -1,0 +1,22 @@
+# ---------------------------------------------------------------------------
+# Sentinel AI - core runtime dependencies
+# Python 3.11+  (tested with 3.11.9)
+# Install with:  pip install -r requirements.txt
+# ---------------------------------------------------------------------------
+fastapi>=0.115,<1.0
+uvicorn[standard]>=0.30,<1.0
+sqlalchemy>=2.0,<3.0
+pydantic>=2.7,<3.0
+python-dotenv>=1.0,<2.0
+python-multipart>=0.0.9,<1.0
+cryptography>=42.0
+websockets>=12.0
+
+# Computer vision / imaging
+opencv-python>=4.9,<5.0
+numpy>=1.26,<3.0
+Pillow>=10.0
+
+# System telemetry and webhook delivery
+psutil>=5.9
+requests>=2.31

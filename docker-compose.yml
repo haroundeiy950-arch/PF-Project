@@ -1,0 +1,44 @@
+# ---------------------------------------------------------------------------
+# Sentinel AI - single-container deployment (API + dashboard)
+#
+#   docker compose up --build
+#   open http://localhost:8000
+#
+# Change SECRET_KEY (or put it in a .env file next to this file) before
+# exposing the service to anyone.
+# ---------------------------------------------------------------------------
+services:
+  sentinel:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: sentinel-ai:1.0.0
+    container_name: sentinel-ai
+    ports:
+      - "8000:8000"
+    environment:
+      APP_NAME: Sentinel AI
+      ENVIRONMENT: production
+      SECRET_KEY: ${SECRET_KEY:-change-me-before-going-live}
+      PIPELINE_ENABLED: "true"
+      LIVE_ONLY: "true"
+      EVIDENCE_ENABLED: "true"
+      RECORDING_ENABLED: "true"
+      CONTINUOUS_RECORDING_ENABLED: "true"
+      CONTINUOUS_SEGMENT_SECONDS: "300"
+      SAVE_MOTION_SNAPSHOTS: "true"
+      SEED_DEMO_DATA: "false"
+      DEMO_MODE: "false"
+      DEMO_AUTOTRIGGER: "false"
+      VOICE_ENABLED: "true"
+      RESET_DATABASE: "false"
+      CORS_ORIGINS: "http://localhost:8000"
+    # To use a physical camera inside the container on Linux, add e.g.
+    # devices:
+    #   - /dev/video0:/dev/video0
+    volumes:
+      - sentinel-storage:/app/storage
+    restart: unless-stopped
+
+volumes:
+  sentinel-storage:
